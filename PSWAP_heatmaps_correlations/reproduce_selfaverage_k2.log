@@ -1,0 +1,11 @@
+CASE=k2  orbit K=1800  build 4.5s
+(1) per-seed reproduction from archived run-length sequences:
+    seed 42: r(mine, archived corr_seed42) = 0.998   peak=1.000
+    seed 43: r(mine, archived corr_seed43) = 0.997   peak=1.000
+    seed 44: r(mine, archived corr_seed44) = 0.993   peak=1.000
+    seed 45: r(mine, archived corr_seed45) = 0.997   peak=1.000
+    seed 46: r(mine, archived corr_seed46) = 0.985   peak=1.000
+(2) fresh independent seeds:
+    20-seed mean vs archived corr_avg: r=0.973  peak mine=1.000 archived=1.000
+    self-averaging: 5-seed-mean RMS spread = 2.9% of peak; single-seed vs single-seed r = 0.900
+total 50.1s

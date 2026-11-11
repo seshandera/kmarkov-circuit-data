@@ -1,0 +1,9 @@
+theta=pi/4, deterministic brickwork, half-ring cut next to site 0
+  N    phi  orbit_max   2N^2  OSEE_sat volume ~N/2
+  6      0         72     72     2.791         3.0   (0s)
+  6   pi/2       1024     72     4.583         3.0   (1s)
+  8      0        128    128     2.950         4.0   (0s)
+  8   pi/2      16384    128     6.429         4.0   (45s)
+ 10      0        200    200     3.038         5.0   (0s)
+ 10   pi/2     262144    200     8.300         5.0   (928s)
+Expect: phi=0 -> orbit=2N^2, OSEE flat ~O(1); phi=pi/2 -> orbit>>2N^2, OSEE grows with N.

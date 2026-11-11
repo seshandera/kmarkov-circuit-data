@@ -1,0 +1,7 @@
+  seed 0: t_scr=101, 13.5s
+  seed 1: t_scr=106, 29.4s
+  seed 2: t_scr=98, 44.1s
+  seed 19: t_scr=91, 240.4s
+20 seeds done, total 240.4s
+20-seed mean vs archived comp_C_iid: r=0.999  peak mine=1.000 archived=1.000
+self-averaging: 5-seed-mean RMS spread = 0.1% of peak; single-seed vs single-seed r = 0.990

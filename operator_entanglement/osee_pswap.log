@@ -1,0 +1,7 @@
+orbit K=1800  cut sizes(L,R)=(15,15)  distinct halves(L,R)=(512,512)  OSEE bound=log2(2N^2)=10.81 bits
+build 4.6s
+uniform_ER80  : OSEE max=3.49 bits, late-plateau~3.36 bits (bound 10.81); w/N late~0.512; 83s
+k0_ER4        : OSEE max=3.50 bits, late-plateau~3.36 bits (bound 10.81); w/N late~0.505; 101s
+k1_ER4        : OSEE max=3.48 bits, late-plateau~3.39 bits (bound 10.81); w/N late~0.522; 118s
+k2_ER4        : OSEE max=3.49 bits, late-plateau~3.34 bits (bound 10.81); w/N late~0.522; 135s
+saved operator_entanglement/osee_results.npz  total 135s

@@ -83,6 +83,25 @@ rules, showing the frequency content of the weight oscillations about the common
 - `dw_sector_weights_canonical_data.npz`: Z-sector and DW-sector weights against time for all cases
   (θ=π/300, N=30).
 
+## Robustness checks
+
+These scripts back two statements in the published paper: that five realizations are enough because the
+late-time correlations self-average, and that the operator-space entanglement entropy (OSEE) of the PSWAP
+dynamics saturates at an O(1) value. Each script needs only numpy and scipy. Run it from the repository
+root; its recorded output is the `.log` file beside it.
+
+| Script | What it checks | Recorded result | Run time |
+|---|---|---|---|
+| `fig_4panel_corr/reproduce_selfaverage_clifford.py` | 20 new realizations of the i.i.d. SWAP/WC rule (f_A=0.83, N=512) against the archived `comp_C_iid` | r=0.999 with the archive; 5-realization mean spread 0.1% of peak | ~4 min |
+| `PSWAP_heatmaps_correlations/reproduce_selfaverage.py k0` | Independent PSWAP code: reproduces each archived seed, then 20 new seeds against `corr_avg` (k=0, N=30) | per-seed r=0.983–0.998; 20-seed r=0.989; spread 2.8% | ~1 min |
+| `PSWAP_heatmaps_correlations/reproduce_selfaverage.py k2` | The same for the k=2 symmetric E[R]=4 rule | per-seed r=0.985–0.998; 20-seed r=0.973; spread 2.9% | ~1 min |
+| `operator_entanglement/osee_pswap.py` | OSEE across a half-ring cut for four PSWAP rules at N=30 (`osee_results.npz`) | late plateau 3.34–3.39 bits, well below the log2(2N²)=10.8-bit bound, for every rule | ~2 min |
+| `operator_entanglement/osee_nscaling.py` | OSEE plateau against N=20–60 (`osee_nscaling.npz`) | 3.27 to 3.45 bits: O(1), not growing like N/2 | ~8 min |
+| `operator_entanglement/osee_fsim_benchmark.py` | Contrast: an fSim gate with an interaction phase φ=π/2 for N=6–10 | φ=0 stays near 3 bits; φ=π/2 grows with N (4.6, 6.4, 8.3 bits) | ~16 min |
+
+The Clifford check uses `fig_4panel_corr/clifford_swap_wc.py`, a standalone copy of the paper's SWAP/WC
+simulator. It gives bit-identical heatmaps to the original code for the same seeds.
+
 ## Loading data
 
 ```python
